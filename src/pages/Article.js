@@ -18,7 +18,7 @@ const Article = () => {
   return (
     <section className="container">
       {article.map((article) => {
-        return <Card article={article} />;
+        return <p>{article.title}</p>;
       })}
     </section>
   );
