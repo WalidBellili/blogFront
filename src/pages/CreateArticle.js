@@ -3,10 +3,8 @@ import { useState } from "react";
 
 const CreateArticle = () => {
   const [name, setName] = useState("");
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-
   const [errors, setErrors] = useState([]);
 
   const handleTitleChange = (e) => {
@@ -20,42 +18,33 @@ const CreateArticle = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const body = {
-    //   name,
-    //   email,
-    //   password,
-    //   profile_picture: profilePicture,
-    //   city,
-    // };
-
-    // const data = await postUser(body);
-
-    // if (data.status === 200) {
-    //   // navigate(`/${data.response.slug}`);
-    // } else {
-    //   setErrors(data.response);
-    // }
+    const body = {
+      title,
+      author,
+    };
   };
 
   return (
-    <section>
+    <section className="input-container">
       <form onSubmit={handleSubmit}>
         <Input
-          type="password"
-          placeholder="Password"
-          label="Password"
-          id="password"
+          type="text"
+          placeholder="title"
+          label="Title"
+          id="title"
           value={title}
           handleChange={handleTitleChange}
+          className='input'
         />
 
         <Input
-          type="url"
-          placeholder="Profile picture"
-          label="Profile picture"
-          id="profile_picture"
+          type="text"
+          placeholder="Author"
+          label="author"
+          id="author"
           value={author}
           handleChange={handleAuthorChange}
+          className='input'
         />
       </form>
     </section>

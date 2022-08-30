@@ -6,13 +6,20 @@ const Input = ({
   labelhandleChange,
   errors,
   label,
+  className,
 }) => {
   return (
     <div className="">
       <label className="" htmlFor={id}>
         {label}
       </label>
-      <input type={type} placeholder={placeholder} id={id} value={value} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        id={id}
+        value={value}
+        className={className}
+      />
     </div>
   );
 };

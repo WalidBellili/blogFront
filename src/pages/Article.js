@@ -12,14 +12,13 @@ const Article = () => {
   const fetchData = async () => {
     const request = await fetch(`http://localhost:5000/articles/${slug}`);
     const response = await request.json();
+    console.log(response);
     setArticle(response);
   };
 
   return (
     <section className="container">
-      {article.map((article) => {
-        return <p>{article.title}</p>;
-      })}
+      <p>{article.title}</p>
     </section>
   );
 };
